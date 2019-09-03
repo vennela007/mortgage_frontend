@@ -1,8 +1,38 @@
 import React,{Component} from 'react';
 import './Register.css';
-
+import axios from 'axios';
+import config from '../../config.json';
+import swal from 'sweetalert';
+import {withRouter} from 'react-router-dom';
 class Register3 extends Component{
    
+
+    handleFinish=(e)=>{
+        e.preventDefault();
+        let registerData={
+            operationType:this.props.operationType,
+            propertyCost:this.props.propertyCost,
+            deposit:this.props.deposit,
+            occupation:this.props.occuption,
+            customerName:this.props.firstName,
+            dateOfBirth:this.props.dob, 
+            phoneNumber:this.props.phoneNumber,
+            email:this.props.email
+         }
+         console.log(registerData);
+             axios.post(config.url+'createMortgage/',registerData).then((response)=>{
+             console.log(response.data) 
+             localStorage.setItem("loginId",response.data.loginId);
+             localStorage.setItem("password",response.data.password);
+             localStorage.setItem("transactionAccountNumer",response.data.transactionAccountNumer);
+             localStorage.setItem("mortageAccountNumber",response.data.mortageAccountNumber);
+              this.props.history.push('/accountDetails');
+           
+         }).catch((error)=>{ 
+             console.log(error);        
+         });
+        
+    }
     render(){
         return(
             <div align="center">
@@ -25,7 +55,7 @@ class Register3 extends Component{
                         </div>
                         <div className="form-group">
                         <button id="btn7" className="btn btn-primary"  onClick={this.props.prev}>Prev</button>
-                         <button id="btn8" className="btn btn-success" onClick={this.props.next}>Next</button>
+                         <button id="btn8" className="btn btn-success" onClick={this.handleFinish}>Next</button>
                 </div> 
                     
            
@@ -35,4 +65,4 @@ class Register3 extends Component{
         )
     }
 }
-export default Register3;
+export default withRouter(Register3);

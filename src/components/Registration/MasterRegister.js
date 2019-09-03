@@ -3,6 +3,9 @@ import Register from './Register';
 import Register2 from './Register2';
 import Register3 from './Register3';
 import Steps from './Steps';
+import axios from 'axios';
+import config from '../../config.json';
+
 
  class  MasterRegister extends Component{
      constructor(props){
@@ -133,6 +136,7 @@ import Steps from './Steps';
          }
          
 
+     
      }
      prev=()=>{
         const err = this.validate()
@@ -164,7 +168,7 @@ import Steps from './Steps';
               return <div>
                   <Steps step={this.state.step}/>
                   <Register2
-                      occuption={this.state.occuption}
+                     occuption={this.state.occuption}
                      firstName={this.state.firstName}
                      firstNameError={this.state.firstNameError}
                      middleName={this.state.middleName}
@@ -180,6 +184,12 @@ import Steps from './Steps';
               return <div>
                   <Steps step={this.state.step}/>
                   <Register3
+                   operationType={this.state.operationType}
+                   propertyCost={this.state.propertyCost}
+                   deposit={this.state.deposit}
+                   occuption={this.state.occuption}
+                   firstName={this.state.firstName}
+                   dob={this.state.dob}
                     phoneNumber={this.state.phoneNumber}
                     phoneNumberError={this.state.phoneNumberError}
                     email={this.state.email}

@@ -42,7 +42,7 @@ class Login extends Component {
             <h5 className="card-title text-center">CUSTOMER LOGIN</h5>
             <form className="form-signin">
               <div className="form-label-group">
-                <input type="number" id="loginId" onChange={this.handleChange} name="loginId" className="form-control" placeholder="enter the mobile number"required autofocus>
+                <input type="text" id="loginId" onChange={this.handleChange} name="loginId" className="form-control" placeholder="enter the mobile number"required autofocus>
             </input>    <label for="loginId">Login Id</label>
               </div>
 
