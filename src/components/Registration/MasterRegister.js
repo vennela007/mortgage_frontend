@@ -54,7 +54,7 @@ import config from '../../config.json';
        }
        if(this.state.propertyCost <100000){
         isError = true;
-        errors.propertyCostError = 'Please enter a the minimum property cost';
+        errors.propertyCostError = 'Please enter  the minimum property cost';
     }
     if(this.state.deposit<0){
         isError=true;

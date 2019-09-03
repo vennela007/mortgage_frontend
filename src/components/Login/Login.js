@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import config from '../../config.json';
 import {Link} from 'react-router-dom';
-
+import { withTranslation} from 'react-i18next';
 class Login extends Component {
     constructor(props) {
         super(props);
@@ -34,6 +34,7 @@ class Login extends Component {
      
     }
     render() {
+        let { t } = this.props;
         return (
         
             <div >
@@ -41,24 +42,24 @@ class Login extends Component {
       <div className="col-sm-9 col-md-7 col-lg-5 mx-auto">
         <div className="card card-signin my-5">
           <div className="card-body">
-            <h5 className="card-title text-center">CUSTOMER LOGIN</h5>
+            <h5 className="card-title text-center">{t('customer Login')}</h5>
             <form className="form-signin">
               <div className="form-label-group">
-              <label for="loginId">Login Id</label>
-                <input type="text" id="loginId" onChange={this.handleChange} name="loginId" className="form-control" placeholder="enter the mobile number"required autofocus>
+              <label for="loginId">{t('Login Id')}</label>
+                <input type="text" id="loginId" onChange={this.handleChange} name="loginId" className="form-control" placeholder="enter the login Id"required autofocus>
             </input>  
               </div>
 
               <div className="form-label-group">
-              <label for="inputPassword">Password</label>
+              <label for="inputPassword">{t('password')}</label>
                 <input type="password" id="inputPassword" onChange={this.handleChange} name="password"  className="form-control" placeholder="enter the password" required>
           </input>     
               </div>
-              <button  id="btn1" className="btn btn-lg btn-primary btn-block text-uppercase" onClick={this.handleSubmit}type="submit">Sign in</button>
+              <button  id="btn1" className="btn btn-lg btn-primary btn-block text-uppercase" onClick={this.handleSubmit}type="submit">{t('Sign in')}</button>
                                  
              </form>
              </div>
-                        <Link className="nav-item nav-link login-tag-title" to='/register'>New User? Register</Link>
+                        <Link className="nav-item nav-link login-tag-title" to='/register'>{t('New User? Register')}</Link>
                     </div>
           </div>
         </div>
@@ -70,4 +71,4 @@ class Login extends Component {
     }
 }
 
-export default Login;
+export default withTranslation()(Login);
