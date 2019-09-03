@@ -9,7 +9,7 @@ class Register extends Component{
     render(){
         return(
             <div align="center">
-                <h1 align="center">Mortagages + Signips</h1>
+                <h1 align="center">Mortgages + Signups</h1>
                     <form className="form1" >
                     <div className="form-group formgroup">
                         <label ><b>I'm thinking about</b></label>
@@ -22,9 +22,6 @@ class Register extends Component{
                                 <option value="Remortgaging my buy to let property">Remortgaging my buy to let property</option>
  
                          </select>
-                            <div className="div" >
-                            <input   type="text" className="form-control div1" id=" "  />
-                            </div>
                       </div>
 
                       <div className="form-group formgroup" >

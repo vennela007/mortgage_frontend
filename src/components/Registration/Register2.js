@@ -38,7 +38,7 @@ class Register2 extends Component{
                          </select>
                          </div>
                       <div className="form-group formgroup" >
-                            <label><b>first Name</b></label>
+                            <label><b>First Name</b></label>
                                     <div >
                                         <input type="text" className="form-control "  name="firstName" id="firstName" value={this.props.firstName}   onChange={this.props.onChange} required />
                                         <div className="errorMsg">{this.props.firstNameError}</div>
@@ -52,7 +52,7 @@ class Register2 extends Component{
                                      </div>
                         </div>
                         <div className="form-group formgroup" >
-                            <label><b>Sur Name</b></label>
+                            <label><b>SurName</b></label>
                                     <div >
                                         <input type="text" className="form-control "  name="surName" id="surName" value={this.props.surName}   onChange={this.props.onChange} required />
                                         <div className="errorMsg">{this.props.surNameError}</div>
